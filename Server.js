@@ -6,6 +6,7 @@ var {User}=require('./User');
 app.use(bodyparser.json());
 app.use(express.json());
 
+const port = process.env.PORT || 3000;
 
 
 app.post('/data',(req,res)=>{
@@ -26,7 +27,7 @@ User.find({}).then((user)=>{
       
 });
 })
-const PORT = process.env.PORT || 3000;
-app.listen(PORT,()=>{
+
+app.listen(port,()=>{
     console.log('app is run on port 3000');
 })
